@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: white;
+}
+
+#gameboard {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 15px solid #f54240;
+  box-sizing: border-box;
+  animation: pulse 2s 1; /* Run the animation once */
+}
+
+.cross {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  transform: rotate(45deg);
+  animation: spin 2s 1; /* Run the animation once */
+}
+
+.cross:before,
+.cross:after {
+  content: "";
+  position: absolute;
+  background-color: #ea6a1e;
+}
+
+.cross:before {
+  left: 50%;
+  width: 25%;
+  margin-left: -15%;
+  height: 100%;
+}
+
+.cross:after {
+  top: 50%;
+  height: 25%;
+  margin-top: -15%;
+  width: 100%;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.win-message {
+  animation: fadeIn 1s;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3375d2;
+  
+}
+
+
+h1 {
+  color:  #f54240; 
+  text-align: center;
+  font-size: 2.5rem; 
+  margin-top: 20px;
+  margin-bottom: 1rem;
+
+}
+.animate__animated.animate__bounce {
+  --animate-duration: 3s;
+}
+
+h3 {
+  color: #333; 
+  text-shadow: 1px 1px 1px rgba(159, 153, 153, 0.5); 
+  margin-bottom: 5rem;
+  padding: 3rem;
+}
+.animate__animated.animate__fadeIn {
+  --animate-duration: 4s;
+}
